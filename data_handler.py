@@ -16,8 +16,8 @@ def get_data(folder):
     """
     # Load the dataset
     training_file = os.path.join(folder, TRAIN_FILE)
-    validation_file= os.path.join(folder, VALID_FILE)
-    testing_file =  os.path.join(folder, TEST_FILE)
+    validation_file = os.path.join(folder, VALID_FILE)
+    testing_file = os.path.join(folder, TEST_FILE)
 
     with open(training_file, mode='rb') as f:
         train = pickle.load(f)
@@ -26,7 +26,7 @@ def get_data(folder):
     with open(testing_file, mode='rb') as f:
         test = pickle.load(f)
 
-    # Retrive all datas
+    # Retrieve all data
     X_train, y_train = train['features'], train['labels']
     X_valid, y_valid = valid['features'], valid['labels']
     X_test, y_test = test['features'], test['labels']

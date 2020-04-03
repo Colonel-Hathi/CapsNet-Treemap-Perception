@@ -13,27 +13,20 @@ Options:
   <output>      Ouput folder. By default: ./outputs/
   <ckpt>        Path to the checkpoints to restore
 """
-
-
+import PIL
 import tensorflow as tf
 import numpy as np
 import random
 import pickle
 import os
-#from PIL import Image
+from PIL import Image
 from docopt import docopt
-from tensorflow_core.python.keras.preprocessing.image import ImageDataGenerator
+from keras_preprocessing.image import ImageDataGenerator
 
 from model import ModelTreemap
 from data_handler import get_data
 
-#classfloats = [i for i in np.arange(0, 1000, 0.1)]
-#classfloats = map(lambda n: '%.1f'%n, classfloats)
-#classlist = [str(i) for i in classfloats]
-#CLASSES = classlist
 BATCH_SIZE = 128
-DATASET_FOLDER = "dataset/training-images"
-
 
 def train(dataset, ckpt=None, output=None):
     """
@@ -48,12 +41,12 @@ def train(dataset, ckpt=None, output=None):
         """
             Custom preprocessing_function
         """
-        img = img * 255
-        #img = PIL.Image.fromarray(img.astype('uint8'), 'RGB')
+        #img = img * 255
+        img = PIL.Image.fromarray(img.astype('uint8'), 'RGB')
         #img = ImageEnhance.Brightness(img).enhance(random.uniform(0.6, 1.5))
         #img = ImageEnhance.Contrast(img).enhance(random.uniform(0.6, 1.5))
 
-        return np.array(img) / 255
+        return np.array(img)# / 255
 
     X_train, y_train, X_valid, y_valid, X_test, y_test = get_data(dataset)
 
