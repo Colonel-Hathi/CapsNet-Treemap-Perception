@@ -19,7 +19,7 @@ import numpy as np
 import random
 import pickle
 import os
-from PIL import Image
+from PIL import Image, ImageEnhance
 from docopt import docopt
 from keras_preprocessing.image import ImageDataGenerator
 
@@ -41,12 +41,11 @@ def train(dataset, ckpt=None, output=None):
         """
             Custom preprocessing_function
         """
-        #img = img * 255
+        img = img * 255
         img = PIL.Image.fromarray(img.astype('uint8'), 'RGB')
-        #img = ImageEnhance.Brightness(img).enhance(random.uniform(0.6, 1.5))
-        #img = ImageEnhance.Contrast(img).enhance(random.uniform(0.6, 1.5))
-
-        return np.array(img)# / 255
+        img = ImageEnhance.Brightness(img).enhance(random.uniform(0.6, 1.5))
+        img = ImageEnhance.Contrast(img).enhance(random.uniform(0.6, 1.5))
+        return np.array(img) / 255
 
     X_train, y_train, X_valid, y_valid, X_test, y_test = get_data(dataset)
 
@@ -64,7 +63,7 @@ def train(dataset, ckpt=None, output=None):
         preprocessing_function=preprocessing_function)
     inference_datagen = ImageDataGenerator()
     train_datagen.fit(X_train)
-    train_datagen_augmented.fit(X_train)
+    #train_datagen_augmented.fit(X_train)
     inference_datagen.fit(X_valid)
     inference_datagen.fit(X_test)
 

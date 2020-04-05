@@ -14,7 +14,7 @@ class ModelTreemap(ModelBase):
     """
 
     # Numbers of label to predict
-    NB_LABELS = 10000
+    NB_LABELS = 1000
 
     def __init__(self, model_name, output_folder):
         """
@@ -33,10 +33,11 @@ class ModelTreemap(ModelBase):
                 *tf_labels: Labels Placeholder
         """
         # Images 32*32*3
-        classfloats = [i for i in np.arange(0, 1000, 0.1)]
-        classfloats = map(lambda n: '%.1f'%n, classfloats)
+
+        classfloats = [i for i in np.arange(0, 1000, 1)]
+        #classfloats = map(lambda n: '%.1f'%n, classfloats)
         classlist = [str(i) for i in classfloats]
-        CLASSES = classlist
+
         tf_images = tf.placeholder(tf.float32, [None, 32, 32, 3], name='images')
         # Labels: [0, 1, 6, 20, ...]
         tf_labels = tf.placeholder(tf.int64, [None], name='labels')
