@@ -2,22 +2,17 @@ import os
 import glob
 import pickle
 from PIL import Image
+import numpy as np
 from docopt import docopt
-
-
-class FileData(object):
-    def __init__(self, path):
-        self.path = path
-        with open(path, "rb") as fileobj:
-            self.data = fileobj.read()
 
 
 def generate_files(path):
     base = 'dataset/'
-    folder = base + path
+    folder = base + path + '/large'
     labels = os.listdir(folder)
-    images = extract_images(folder)
-    pairs = dict(zip(images, labels))
+    imagedata = extract_images(folder)
+    labeldata = str(labels)
+    pairs = dict(zip(imagedata, labeldata))
     pickle.dump(pairs, open(path + '.p', 'wb'))
 
 
@@ -25,12 +20,22 @@ def extract_images(folder):
     image_list = []
     imagefolder = folder + '/*.png'
     for images in glob.glob(imagefolder):
-        im = Image.open(images)
-        image_list.append(im)
-    return image_list
+        imagedata = load_image(images)
+        image_list.append(imagedata)
+    return tuple(image_list)
+    #return str(image_list)
+
+
+def load_image(imagepath):
+    image = Image.open(imagepath)
+    #image.load()
+    imagedata = np.array(image)
+    #imagedata = list(image.getdata())
+    data = str(imagedata)
+    return data
 
 
 if __name__ == '__main__':
-    generate_files('training-data')
+    generate_files('test-data')
     #arguments = docopt(__doc__)
     #generate_files(arguments["<path>"])
