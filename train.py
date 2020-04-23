@@ -17,7 +17,6 @@ import PIL
 import tensorflow as tf
 import numpy as np
 import random
-import pickle
 import os
 from PIL import Image, ImageEnhance
 from docopt import docopt
