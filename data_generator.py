@@ -3,29 +3,35 @@ import glob
 import pickle
 from PIL import Image
 import numpy as np
-from docopt import docopt
 
+# List of pickle files to generate
 filelist = ['training-data', 'validation-data', 'test-data']
 
+# Generate pickle files containing dict with 4D array of image features and 1D array of labels
 def generate_files():
+    # Dataset folder
     base = 'dataset/'
     for file in filelist:
+        # Image folder
         folder = base + file + '/small'
+        # Generate label list from directory
         labels = os.listdir(folder)
-        make_classlabels(labels)
+        labels = make_classlabels(labels)
         features = extract_images(folder)
+        # Generate and fill dictionary with key/value pairs 'features' and 'labels'
         pairs = {}
         pairs['features'] = features
         pairs['labels'] = labels
+        # Write dict to pickle file
         pickle.dump(pairs, open(file + '.p', 'wb'))
 
-
+# Extract images from folder and convert to 4D numpy array
 def extract_images(folder):
     imagefolder = glob.glob(folder + '/*.png')
     image_list = np.array([np.array(Image.open(images)) for images in imagefolder])
     return image_list
 
-
+# Round label names to whole numbers
 def make_classlabels(list):
     labels = []
     for item in list:
@@ -34,5 +40,3 @@ def make_classlabels(list):
 
 if __name__ == '__main__':
     generate_files()
-    #arguments = docopt(__doc__)
-    #generate_files(arguments["<path>"])
