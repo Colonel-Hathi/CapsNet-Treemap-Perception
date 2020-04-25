@@ -25,7 +25,7 @@ from keras_preprocessing.image import ImageDataGenerator
 from model import ModelTreemap
 from data_handler import get_data
 
-BATCH_SIZE = 128
+BATCH_SIZE = 64
 
 def train(dataset, ckpt=None, output=None):
     """
@@ -48,7 +48,7 @@ def train(dataset, ckpt=None, output=None):
 
     X_train, y_train, X_valid, y_valid, X_test, y_test = get_data(dataset)
 
-    X_train = X_train / 255
+    X_train = X_train / 511
     X_valid = X_valid / 255
     X_test = X_test / 255
 

@@ -5,7 +5,6 @@ __pycache__/
 
 outputs/*
 dataset/*
-*.p
 
 # C extensions
 *.so
@@ -107,3 +106,6 @@ ENV/
 validation-data.p
 training-data.p
 test-data.p
+*.p
+test-data.p
+training-data.p

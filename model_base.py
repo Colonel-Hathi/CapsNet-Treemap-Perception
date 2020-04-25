@@ -134,7 +134,8 @@ class ModelBase(object):
         self.saver = tf.train.Saver()
         self.sess = tf.Session()
         # Init variables
-        self.sess.run(tf.global_variables_initializer())
+        #self.sess.run(tf.global_variables_initializer())
+        self.sess.run(tf.compat.v1.global_variables_initializer())
         # Tensorboard
         self.tf_tensorboard = tf.summary.merge_all()
         train_log_name = os.path.join(

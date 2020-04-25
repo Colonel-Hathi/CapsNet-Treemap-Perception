@@ -12,9 +12,8 @@ def generate_files():
     for file in filelist:
         folder = base + file + '/small'
         labels = os.listdir(folder)
+        make_classlabels(labels)
         features = extract_images(folder)
-        #labeldata = labels
-        #zipdata = zip(imagedata, labeldata)
         pairs = {}
         pairs['features'] = features
         pairs['labels'] = labels
@@ -22,13 +21,16 @@ def generate_files():
 
 
 def extract_images(folder):
-    image_list = []
-    imagefolder = folder + '/*.png'
-    for images in glob.glob(imagefolder):
-        image = Image.open(images)
-        image_list.append(np.asarray(image))
-    return np.array(image_list)
+    imagefolder = glob.glob(folder + '/*.png')
+    image_list = np.array([np.array(Image.open(images)) for images in imagefolder])
+    return image_list
 
+
+def make_classlabels(list):
+    labels = []
+    for item in list:
+        labels = item.split(".", 1)[0]
+    return labels
 
 if __name__ == '__main__':
     generate_files()
