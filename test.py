@@ -23,8 +23,8 @@ import random
 import pickle
 import os
 
-from model import ModelTrafficSign
-from data_handler import get_data
+from model import ModelTreemap
+from data_handler import get_images
 
 
 def plot_confusion_matrix(cm, classes, normalize=True, title='Confusion matrix', cmap=plt.cm.Blues):
@@ -73,7 +73,7 @@ def test(dataset, ckpt):
     id_to_name = { int(line.split(",")[0]):line.split(",")[1] for line in signnames.split("\n")[1:] if len(line) > 0}
 
     # Get Test dataset
-    _, _, _, _, X_test, y_test = get_data(dataset)
+    _, _, _, _, X_test, y_test = get_images(dataset)
     X_test = X_test / 255
 
     model = ModelTrafficSign("TrafficSign", output_folder=None)

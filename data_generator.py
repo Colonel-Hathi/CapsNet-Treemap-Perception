@@ -10,7 +10,7 @@ filelist = ['training-data', 'validation-data', 'test-data']
 # Generate pickle files containing dict with 4D array of image features and 1D array of labels
 def generate_files():
     # Dataset folder
-    base = 'dataset/'
+    base = 'dataset/Minidata/'
     for file in filelist:
         # Image folder
         folder = base + file + '/small'
@@ -23,7 +23,7 @@ def generate_files():
         pairs['features'] = features
         pairs['labels'] = labels
         # Write dict to pickle file
-        pickle.dump(pairs, open(file + '.p', 'wb'))
+        pickle.dump(pairs, open('m' + file + '.p', 'wb'))
 
 # Extract images from folder and convert to 4D numpy array
 def extract_images(folder):
