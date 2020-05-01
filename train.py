@@ -25,7 +25,7 @@ from keras_preprocessing.image import ImageDataGenerator
 from model import ModelTreemap
 from data_handler import get_images
 
-BATCH_SIZE = 16
+BATCH_SIZE = 2
 
 def train(dataset, ckpt=None, output=None):
     """

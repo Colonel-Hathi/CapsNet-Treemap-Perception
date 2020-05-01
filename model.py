@@ -14,7 +14,7 @@ class ModelTreemap(ModelBase):
     """
 
     # Numbers of label to predict
-    NB_LABELS = 1000
+    NB_LABELS = 15
 
     def __init__(self, model_name, output_folder):
         """

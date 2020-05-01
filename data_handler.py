@@ -9,7 +9,7 @@ from PIL import Image
 
 def get_images(folder):
     filelist = ['training-data', 'validation-data', 'test-data']
-    base = folder #+ 'minidata/'
+    base = folder + 'Nodedata/'
     for file in filelist:
         # Image folder
         imagefolder = base + file + '/small'
@@ -45,7 +45,6 @@ def write_contents_txt(file):
 
 def extract_images(folder):
     imagefolder = glob.glob(folder + '/*.png')
-    #image_list = np.array([np.array(Image.open(images)) for images in imagefolder])
     image_list = []
     for images in imagefolder:
         image = np.array(Image.open(images))
@@ -58,7 +57,8 @@ def extract_images(folder):
 def make_classlabels(list):
     labels = []
     for item in list:
-        label = item.split(".", 1)[0]
+        label = item.split("-", 1)[1]
+        label = label.split(".", 1)[0]
         labels.append(label)
     return labels
 
