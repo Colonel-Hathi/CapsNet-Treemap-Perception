@@ -34,11 +34,7 @@ class ModelTreemap(ModelBase):
         """
         # Images 32*32*3
 
-        classfloats = [i for i in np.arange(0, 1000, 1)]
-        #classfloats = map(lambda n: '%.1f'%n, classfloats)
-        classlist = [str(i) for i in classfloats]
-
-        tf_images = tf.placeholder(tf.float32, [None, 32, 32, 3], name='images')
+        tf_images = tf.placeholder(tf.float32, [None, 48, 48, 3], name='images')
         # Labels: [0, 1, 6, 20, ...]
         tf_labels = tf.placeholder(tf.int64, [None], name='labels')
         return tf_images, tf_labels
@@ -105,9 +101,16 @@ class ModelTreemap(ModelBase):
         upsample3 = tf.image.resize_nearest_neighbor(conv2, (32, 32))
         conv6 = tf.layers.conv2d(upsample3, 16, (3,3), padding='same', activation=tf.nn.relu)
 
+        upsample4 = tf.image.resize_nearest_neighbor(conv6, (48, 48))
+        conv7 = tf.layers.conv2d(upsample4, 32, (3, 3), padding='same', activation=tf.nn.relu)
+
+        #upsample5 = tf.image.resize_nearest_neighbor(conv6, (96, 96))
+        #conv8 = tf.layers.conv2d(upsample5, 64, (3, 3), padding='same', activation=tf.nn.relu)
+
         # 3 channel for RGG
-        logits = tf.layers.conv2d(conv6, 3, (3,3), padding='same', activation=None)
+        logits = tf.layers.conv2d(conv7, 3, (3,3), padding='same', activation=None)
         decoded = tf.nn.sigmoid(logits, name='decoded')
+
         tf.summary.image('reconstruction_img', decoded)
 
         return decoded

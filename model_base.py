@@ -137,13 +137,13 @@ class ModelBase(object):
         #self.sess.run(tf.global_variables_initializer())
         self.sess.run(tf.compat.v1.global_variables_initializer())
         # Tensorboard
-        self.tf_tensorboard = tf.summary.merge_all()
+        self.tf_tensorboard = tf.compat.v1.summary.merge_all()
         train_log_name = os.path.join(
             os.path.join(self.output_folder, "tensorboard"), self.name, self.sub_train_log_name)
         test_log_name = os.path.join(
             os.path.join(self.output_folder, "tensorboard"), self.name, self.sub_test_log_name)
-        self.train_writer = tf.summary.FileWriter(train_log_name, self.sess.graph)
-        self.test_writer = tf.summary.FileWriter(test_log_name)
+        self.train_writer = tf.compat.v1.summary.FileWriter("Treemaptrainlog", self.sess.graph)
+        self.test_writer = tf.compat.v1.summary.FileWriter("Treemaptestlog")
         self.train_writer_it = 0
         self.test_writer_it = 0
 
@@ -334,9 +334,9 @@ class ModelBase(object):
         # Tensorboard
         self.tf_tensorboard = tf.summary.merge_all()
         train_log_name = os.path.join(
-            os.path.join(self.output_folder, "tensorboard"), self.name, self.sub_train_log_name)
+            os.path.join(self.output_folder, "tensorboard"), self.name, "Treemaptrainlog1")
         test_log_name = os.path.join(
-            os.path.join(self.output_folder, "tensorboard"), self.name, self.sub_test_log_name)
+            os.path.join(self.output_folder, "tensorboard"), self.name, "Treemaptestlog1")
         self.train_writer = tf.summary.FileWriter(train_log_name, self.sess.graph)
         self.test_writer = tf.summary.FileWriter(test_log_name)
         self.train_writer_it = 0

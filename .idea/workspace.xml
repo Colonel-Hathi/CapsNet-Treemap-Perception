@@ -20,7 +20,21 @@
   </component>
   <component name="ProjectId" id="1anunXb8vmrkxiMpbABkgODCenh" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CapsNet-Implementation-Test 2/CapsNet-Tensorflow-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CapsNet-Implementation-Test 2" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="CapsNet-Treemap-Perception-Trafficsigns" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="CapsNet-Treemap-Perception-Trafficsigns" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wthul\Documents\GitHub\CapsNet-Treemap\" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -36,15 +50,15 @@
   </component>
   <component name="RunManager">
     <configuration name="data_generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CapsNet-Treemap-Perception-Trafficsign" />
+      <module name="CapsNet-Treemap-Perception-Trafficsigns" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\wthul\Documents\GitHub\CapsNet-Treemap\CapsNet-Treemap-Perciever\CapsNet-Treemap-Perception-Trafficsign\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_generator.py" />

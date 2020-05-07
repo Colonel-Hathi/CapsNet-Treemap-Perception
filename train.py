@@ -23,9 +23,10 @@ from docopt import docopt
 from keras_preprocessing.image import ImageDataGenerator
 
 from model import ModelTreemap
+from data_handler import get_data
 from data_handler import get_images
 
-BATCH_SIZE = 2
+BATCH_SIZE = 30
 
 def train(dataset, ckpt=None, output=None):
     """
@@ -45,6 +46,7 @@ def train(dataset, ckpt=None, output=None):
         img = ImageEnhance.Brightness(img).enhance(random.uniform(0.6, 1.5))
         img = ImageEnhance.Contrast(img).enhance(random.uniform(0.6, 1.5))
         return np.array(img) / 255
+
 
     X_train, y_train, X_valid, y_valid, X_test, y_test = get_images(dataset)
 

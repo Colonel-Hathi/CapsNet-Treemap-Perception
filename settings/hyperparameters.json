@@ -4,7 +4,7 @@
     "conv_2_size": 6,
     "conv_2_nb": 64,
     "conv_2_dropout": 0.7,
-    "caps_1_vec_len": 16,
+    "caps_1_vec_len": 8,
     "caps_1_size": 5,
     "caps_1_nb_filter": 16,
     "caps_2_vec_len": 32,
