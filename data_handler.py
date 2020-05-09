@@ -11,8 +11,8 @@ import tensorflow as tf
 
 
 def get_images(folder):
-    filelist = ['training-data', 'validation-data', 'test-data', 'hypotheses-data']
-    base = folder + 'nodedata/'
+    filelist = ['training-data', 'validation-data', 'test-data']
+    base = folder
     for file in filelist:
         # Image folder
         imagefolder = base + file + '/small'

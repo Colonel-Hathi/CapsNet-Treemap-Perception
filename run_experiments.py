@@ -6,16 +6,19 @@ from data_handler import get_testimages
 
 
 def test_all(dataset, ckpt):
-    testlist = os.listdir(dataset)
-    model = ModelTreemap("Treemap", output_folder=None)
+    experimentlist = os.listdir(dataset)
     # Load the model
+    model = ModelTreemap("Treemap", output_folder=None)
     model.load(ckpt)
-    csv = ['Set,Acc,Loss']
-    for folder in testlist:
-        path = os.path.join(dataset, folder)
-        csvdata = test(path, model, folder)
-        csv.append(csvdata)
-    write_csv(csv, 'results')
+    for dir in experimentlist:
+        csv = ['Set,Acc,Loss']
+        testlist = os.listdir(dataset + dir)
+        for folder in testlist:
+            path = os.path.join(dataset + dir, folder)
+            csvdata = test(path, model, folder)
+            csv.append(csvdata)
+        write_csv(csv, dir)
+
 
 def test(dataset, model, testset):
     """
@@ -38,7 +41,6 @@ def test(dataset, model, testset):
     stracc = str(acc)
     strloss = str(loss)
     csvdata = testset + ',' + stracc + ',' + strloss
-    print('CSVDATA:' + csvdata)
     return csvdata
 
 
@@ -51,6 +53,6 @@ def write_csv(data, filename):
 
 
 if __name__ == '__main__':
-    test_all('dataset/hypotheses-test', 'output-nodedata1/checkpoints/ckpt1')
+    test_all('dataset/experiments/', 'output-nodedata1/checkpoints/ckpt1')
     #arguments = docopt(__doc__)
     #test_all(arguments["<dataset>"], arguments["<ckpt>"])
