@@ -1,3 +1,4 @@
-Set,Acc,Loss
-datathesescolor1,0.10566666666666667,0.8013596
-datathesescolor2,0.126,0.78642625
+Set	Acc	Loss
+datathesescolor2 (Magenta/Yellow/Pink)	0.126	0.78642625
+base (Blue/Orange/Red)	0.237	0.4846
+datathesescolor1 (Green/Cyan/Grey)	0.1056666667	0.8013596

@@ -104,9 +104,6 @@ class ModelTreemap(ModelBase):
         upsample4 = tf.image.resize_nearest_neighbor(conv6, (48, 48))
         conv7 = tf.layers.conv2d(upsample4, 32, (3, 3), padding='same', activation=tf.nn.relu)
 
-        #upsample5 = tf.image.resize_nearest_neighbor(conv6, (96, 96))
-        #conv8 = tf.layers.conv2d(upsample5, 64, (3, 3), padding='same', activation=tf.nn.relu)
-
         # 3 channel for RGG
         logits = tf.layers.conv2d(conv7, 3, (3,3), padding='same', activation=None)
         decoded = tf.nn.sigmoid(logits, name='decoded')

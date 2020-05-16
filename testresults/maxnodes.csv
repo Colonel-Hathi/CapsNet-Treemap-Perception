@@ -1,6 +1,4 @@
 Set	Acc	Loss	value
-datathesesnodes3+AC0-10	0.316	0.4394943	10
-datathesesnodes3+AC0-20	0.1936454849	0.49399292	30
-datathesesnodes3+AC0-25	0.2558098592	0.45421585	25
 datathesesnodes3+AC0-5	0.489	0.34165788	5
+datathesesnodes3+AC0-10	0.316	0.4394943	10
 base	0.2370264474	0.48463976	15
