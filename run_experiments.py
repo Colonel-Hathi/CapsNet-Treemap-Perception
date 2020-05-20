@@ -1,4 +1,5 @@
 import os
+import docopt
 import matplotlib.pyplot as plt
 
 from model import ModelTreemap
@@ -45,7 +46,6 @@ def test(dataset, model, testset):
 
 
 def write_csv(data, filename):
-    print(data)
     with open('testresults/' + filename + '.csv', 'w') as f:
         for line in data:
             f.write(line)
@@ -53,6 +53,5 @@ def write_csv(data, filename):
 
 
 if __name__ == '__main__':
-    test_all('dataset/experiments/', 'output-nodedata1/checkpoints/ckpt1')
-    #arguments = docopt(__doc__)
-    #test_all(arguments["<dataset>"], arguments["<ckpt>"])
+    arguments = docopt(__doc__)
+    test_all(arguments["<dataset>"], arguments["<ckpt>"])

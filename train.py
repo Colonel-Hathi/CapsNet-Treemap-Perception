@@ -23,7 +23,6 @@ from docopt import docopt
 from keras_preprocessing.image import ImageDataGenerator
 
 from model import ModelTreemap
-from data_handler import get_data
 from data_handler import get_images
 
 BATCH_SIZE = 30

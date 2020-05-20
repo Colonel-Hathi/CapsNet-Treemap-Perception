@@ -23,7 +23,7 @@ import pickle
 import os
 
 from model import ModelTreemap
-from data_handler import get_data
+from data_handler import get_testimages
 
 def test_web_images(dataset, ckpt):
     """
@@ -33,17 +33,12 @@ def test_web_images(dataset, ckpt):
             *ckpt: (String) [Optional] Path to the ckpt file to restore
     """
 
-    # Load name of id
-    #with open("signnames.csv", "r") as f:
-    #    signnames = f.read()
-    #id_to_name = { int(line.split(",")[0]):line.split(",")[1] for line in signnames.split("\n")[1:] if len(line) > 0}
-
     images = []
 
     # Read all image into the folder
     for filename in os.listdir(r"dataset\test-images"):
         img = Image.open(os.path.join(r"dataset\test-images", filename))
-        img = img.resize((32, 32))
+        img = img.resize((48, 48))
         img = np.array(img) / 255
         images.append(img)
 
@@ -63,7 +58,7 @@ def test_web_images(dataset, ckpt):
             #axs[i].imshow(images[i // 2])
             axs[i].set_title("Prediction: %s")#id_to_name[np.argmax(predictions[i // 2])])
         else:
-            axs[i].bar(np.arange(43), predictions[i // 2])
+            axs[i].bar(np.arange(15), predictions[i // 2])
             axs[i].set_ylabel("Softmax")
             axs[i].set_xlabel("Labels")
 
