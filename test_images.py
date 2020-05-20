@@ -55,8 +55,8 @@ def test_web_images(dataset, ckpt):
     for i in range(10):
         if i%2 == 0:
             axs[i].axis('off')
-            #axs[i].imshow(images[i // 2])
-            axs[i].set_title("Prediction: %s")#id_to_name[np.argmax(predictions[i // 2])])
+            axs[i].imshow(images[i // 2])
+            axs[i].set_title("Prediction: %s" % np.argmax(predictions[i // 2]))
         else:
             axs[i].bar(np.arange(15), predictions[i // 2])
             axs[i].set_ylabel("Softmax")
