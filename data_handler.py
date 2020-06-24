@@ -13,7 +13,7 @@ import tensorflow as tf
 IMAGE_SIZE = 'small'
 
 def get_images(folder):
-    filelist = ['training-data', 'validation-data', 'test-data']
+    filelist = ['training-data/', 'validation-data/', 'test-data/']
     base = folder
     for file in filelist:
         # Image folder
@@ -26,11 +26,11 @@ def get_images(folder):
         pairs = {}
         pairs['features'] = features
         pairs['labels'] = np.array(labels, dtype=np.uint8)
-        if file == 'training-data':
+        if file == 'training-data/':
             train = pairs
-        if file == 'validation-data':
+        if file == 'validation-data/':
             valid = pairs
-        if file == 'test-data':
+        if file == 'test-data/':
             test = pairs
 
     # Retrieve all data

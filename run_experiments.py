@@ -46,10 +46,11 @@ def test(dataset, model, testset):
 
 
 def write_csv(data, filename):
-    with open('testresults/' + filename + '.csv', 'w') as f:
-        for line in data:
-            f.write(line)
-            f.write('\n')
+    with open('testresults/') as folder:
+        with open(folder + filename + '.csv', 'w') as f:
+            for line in data:
+                f.write(line)
+                f.write('\n')
 
 
 if __name__ == '__main__':
