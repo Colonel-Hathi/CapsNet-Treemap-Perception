@@ -1,0 +1,43 @@
+Run 1					Run 2					Run 3					Average acc	Average loss		
+Set	Acc	Loss	Value		Set	Acc	Loss	Value		Set	Acc	Loss	Value		Colour	Colour	Value	
+datathesescolor1 (Green/Cyan/Grey)	0.1056666667	0.8013596	G/C/G		datathesescolor1 (Green/Cyan/Grey)	0.036	4.2297254	G/C/G		datathesescolor1 (Green/Cyan/Grey)	0.0636666667	2.166101	G/C/G		0.06844444	2.399062	G/C/G	
+baseline (Blue/Orange/Red)	0.237	0.4846	B/O/R		baseline	0.2285203717	0.48917454	B/O/R		baseline	0.2329521086	0.487559	B/O/R		0.23282416	0.48711118	B/O/R	
+datathesescolor2 (Magenta/Yellow/Pink)	0.126	0.78642625	M/Y/P		datathesescolor2 (Magenta/Yellow/Pink)	0.2163333333	0.5056955	M/Y/P		datathesescolor2 (Magenta/Yellow/Pink)	0.177	0.5180769	M/Y/P		0.17311111	0.60339955	M/Y/P	
+																		
+																		
+Set	Acc	Loss	value		Set	Acc	Loss	value		Set	Acc	Loss	value		Dot size	Dot size	value	
+datathesesnodesize6	0.2	0.50882757	6		datathesesnodesize6	0.2093959732	0.506648	6		datathesesnodesize6	0.1906040268	0.51274806	6		0.2	0.50940788	6	
+datathesesnodesize8	0.2494983278	0.48044172	8		datathesesnodesize8	0.2361204013	0.4835789	8		datathesesnodesize8	0.237458194	0.4828584	8		0.24102564	0.48229301	8	
+baseline	0.2370264474	0.48463976	10		baseline	0.2285203717	0.48917454	10		baseline	0.2329521086	0.487559	10		0.23283298	0.48712443	10	
+datathesesnodesize12	0.2576666667	0.40630823	12		datathesesnodesize12	0.2556666667	0.40478626	12		datathesesnodesize12	0.2616666667	0.4048257	12		0.25833333	0.40530673	12	
+datathesesnodesize14	0.2384615385	0.49421206	14		datathesesnodesize14	0.2227424749	0.49796423	14		datathesesnodesize14	0.2234113712	0.49451235	14		0.22820513	0.49556288	14	
+																		
+																		
+Set	Acc	Loss	value		Set	Acc	Loss	value		Set	Acc	Loss	value		Max childs	Max childs	value	
+datatheseschilds2	0.2443333333	0.48002312	2		datatheseschilds2	0.2353333333	0.48387176	2		datatheseschilds2	0.227	0.4828599	2		0.23555556	0.48225159	2	
+baseline	0.2370264474	0.48463976	4		baseline	0.2285203717	0.48917454	4		baseline	0.2329521086	0.487559	4		0.23283298	0.48712443	4	
+datatheseschilds6	0.2493333333	0.47971013	6		datatheseschilds6	0.2403333333	0.48359856	6		datatheseschilds6	0.2243333333	0.4845209	6		0.238	0.48260986	6	
+datatheseschilds8	0.2923333333	0.45438784	8		datatheseschilds8	0.282	0.45949528	8		datatheseschilds8	0.2696666667	0.4567011	8		0.28133333	0.45686141	8	
+datatheseschilds10	0.2966666667	0.45553476	10		datatheseschilds10	0.2763333333	0.46175334	10		datatheseschilds10	0.2723333333	0.46100736	10		0.28177778	0.45943182	10	
+																		
+																		
+Set	Acc	Loss	value	AdjAcc	Set	Acc	Loss	value	AdjAcc	Set	Acc	Loss	value	AdjAcc	Max nodes	Max nodes	value	AdjAcc
+datathesesnodes3+AC0-5	0.489	0.34165788	5	0.289	datathesesnodes3+AC0-5	0.466	0.34985366	5	0.266	datathesesnodes3+AC0-5	0.441	0.35794547	5	0.2441	0.46533333	0.349819	5	0.46533333
+datathesesnodes3+AC0-10	0.316	0.4394943	10	0.216	datathesesnodes3+AC0-10	0.2853333333	0.44423467	10	0.185	datathesesnodes3+AC0-10	0.2836666667	0.44284904	10	0.184	0.295	0.44219267	10	0.295
+baseline	0.2370264474	0.48463976	15	0.1703	baseline	0.2285203717	0.48917454	15	0.1618	baseline	0.2329521086	0.487559	15	0.1662	0.23283298	0.48712443	15	0.23283298
+																		
+																		
+Set	Acc	Loss	value		Set	Acc	Loss	value		Set	Acc	Loss	value		Node size	Node size	value	
+datathesessize500	0.2290102389	0.48415715	500		datathesessize500	0.2320819113	0.48664725	500		datathesessize500	0.2279863481	0.48311162	500		0.22969283	0.48463867	500	
+datathesessize750	0.2439189189	0.4849149	750		datathesessize750	0.2243243243	0.48975682	750		datathesessize750	0.2290540541	0.48949683	750		0.23243243	0.48805618	750	
+baseline	0.2370264474	0.48463976	1000		baseline	0.2285203717	0.48917454	1000		baseline	0.2329521086	0.487559	1000		0.23283298	0.48712443	1000	
+datathesessize1200	0.2491638796	0.48033407	1200		datathesessize1200	0.2384615385	0.48388195	1200		datathesessize1200	0.2324414716	0.4833746	1200		0.2400223	0.48253021	1200	
+datathesessize1500	0.2404040404	0.48430702	1500		datathesessize1500	0.2259259259	0.48587477	1500		datathesessize1500	0.2191919192	0.48703974	1500		0.2285073	0.48574051	1500	
+																		
+																		
+Set	Acc	Loss	value		Set	Acc	Loss	value		Set	Acc	Loss	value		Resolution	Resolution	value	
+datathesesres48	0.2204013378	0.51238734	48		datathesesres48	0.2040133779	0.5242906	48		datathesesres48	0.2107023411	0.5252052	48		0.21170569	0.52062771	48	
+baseline	0.2370264474	0.48463976	96		baseline	0.2285203717	0.48917454	96		baseline	0.2329521086	0.487559	96		0.23283298	0.48712443	96	
+datathesesres192	0.2276666667	0.4999912	192		datathesesres192	0.2193333333	0.50526077	192		datathesesres192	0.1826666667	0.524415	192		0.20988889	0.50988899	192	
+datathesesres384	0.1307692308	0.5446837	384		datathesesres384	0.120735786	0.5610618	384		datathesesres384	0.0973244147	0.5687344	384		0.11627648	0.55815997	384	
+datathesesres768	0.1278911565	0.5581521	768		datathesesres768	0.1088435374	0.572982	768		datathesesres768	0.0911564626	0.57637143	768		0.10929705	0.56916851	768	
